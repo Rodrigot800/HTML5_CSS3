@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>links </title>
+    <style>
+        a{
+            color: aqua;
+            font-size: 2em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover{
+            color: crimson;
+            border: 1px solid black;
+            text-decoration: underline;
+        }
+
+        a:visited{
+            color: cornflowerblue;
+        }
+        a:active{
+            color:blueviolet
+        }
+        a::after{
+            content: '◀';
+        }
+            a::before{
+            content: '▶';
+        } 
+    </style>
+</head>
+<body>
+    <h1>pesonalizando links</h1>
+    <ul>
+        <li><a class="especial" href="http://">Red hot chilli Perppes </a>
+        <li><a href="http://">Metallica</a>
+        <li><a href="http://">guns rose</a>
+    </ul>
+</body>
+</html>

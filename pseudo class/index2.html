@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div > p {
+            display: none;
+        }
+        div#h1:hover >  p {
+            display: block;
+            background-color: aquamarine;
+            width: 5em;
+        }
+        div#h:hover >  p {
+            display: block;
+            background-color: aquamarine;
+            width: 5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>exemplo de hover</h1>
+    <h2>passe o mouse sobre o texto </h2>
+    <div id="h1">
+        passe <p>ai</p>
+    </div>
+    <div id="h">
+        passe aqui
+        <p>texto escondido</p>
+    </div>
+    <p>fim de exemplo</p>
+</body>
+</html>
