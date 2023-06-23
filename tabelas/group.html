@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        tr,td,th{
+            border: 1px solid black;
+        }
+        .c1{
+            background-color: lightcoral;
+        }
+        .c2{
+            background-color: lightcyan;
+        }
+        .c3{
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="c1">
+            <col class="c2">
+            <col class="c3" span="2">
+        </colgroup>
+        <caption><h1>cadastro</h1></caption>
+        <tr>
+            <th scope="col">nome</th>
+            <th scope="col">sexo</th>
+            <th scope="col">idade</th>
+            <th scope="col">profissão</th>
+        </tr>
+        <tr>
+            <td>rodrigo</td>
+            <td>macho</td>
+            <td>20</td>
+            <td>Eng.software</td>
+        </tr>
+        <tr>
+           <td>Renan</td> 
+           <td>macho</td>
+           <td>15</td>
+           <td>juiz</td>
+        </tr>
+        <tr>
+            <td>Rafael</td> 
+           <td>macho</td>
+           <td>17</td>
+           <td>sargento</td>
+        </tr>
+        <tr>
+            <td>Regina</td> 
+           <td>fêmia</td>
+           <td>38</td>
+           <td>dona de loja</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        body{
+
+            text-align: center;
+            height: 200vh;
+        }
+        th, td{
+            border: 2px solid black;
+            padding: 10px;
+        }
+        table{
+            margin: auto;
+            width: 400px;
+            border-collapse: collapse;
+        }
+        caption{
+            background-color: gray;
+            padding: 10px;
+        }
+        thead,tfoot{
+            color: white;
+            background-color: black;
+        }
+        tbody > tr:nth-child(2n){
+            background-color: lightgrey;
+        }
+        nav{
+            color: aliceblue;
+            background-color: black;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            margin-bottom: 20px;
+
+        }
+        main{
+            margin-top: 100px;
+        }
+        .number{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <nav>
+            <h1>notas do enem</h1>
+        </nav>
+        <caption><h2>relação das notas do enem</h2></caption>
+        <main>
+            <thead>
+                    <tr>
+                        <th scope="col">diciplina</th>
+                        <th scope="col">notas</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>redação</td>
+                    <td class="number">1000</td>
+                </tr>
+                <tr>
+                    <td>matemática</td>
+                    <td class="number">800</td>
+                </tr>
+                <tr>
+                    <td>natureza</td>
+                    <td class="number">700</td>
+                </tr>
+                <tr>
+                    <td>humanas</td>
+                    <td class="number">700</td>
+                </tr>
+                <tr>
+                    <td>linguagem</td>
+                    <td class="number">650</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">
+                        média
+                    </th>
+                    <td class="number">
+                        000
+                    </td>
+                </tr>
+            </tfoot>
+                </table>
+            </body>
+        </main>
+</html>
