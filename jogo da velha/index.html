@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo da Velha</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .cell:hover {
+      background-color: #e0e0e0;
+    }
+
+    .message {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4caf50;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div class="message"></div>
+  <a href="#" class="button" onclick="restartGame()">Reiniciar</a>
+
+  <script>
+   
+  var board = document.querySelector('.board');
+  var cells = document.querySelectorAll('.cell');
+  var message = document.querySelector('.message');
+  var restartButton = document.querySelector('.button');
+  var currentPlayer = 'X';
+  var gameActive = true;
+  var moves = 0;
+
+  cells.forEach(function(cell) {
+    cell.addEventListener('click', handleClick);
+  });
+
+  function handleClick() {
+    if (!gameActive || this.textContent !== '') return;
+
+    this.textContent = currentPlayer;
+    this.classList.add(currentPlayer === 'X' ? 'x' : 'o');
+    moves++;
+
+    if (checkWinner()) {
+      message.textContent = 'Jogador ' + currentPlayer + ' venceu!';
+      gameActive = false;
+    } else if (moves === 9) {
+      message.textContent = 'Empate!';
+      gameActive = false;
+    } else {
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      message.textContent = 'É a vez do jogador ' + currentPlayer;
+    }
+  }
+
+  function checkWinner() {
+    var winningCombinations = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
+    for (var i = 0; i < winningCombinations.length; i++) {
+      var [a, b, c] = winningCombinations[i];
+      if (
+        cells[a].textContent === currentPlayer &&
+        cells[b].textContent === currentPlayer &&
+        cells[c].textContent === currentPlayer
+      ) {
+        cells[a].classList.add('win');
+        cells[b].classList.add('win');
+        cells[c].classList.add('win');
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function restartGame() {
+    cells.forEach(function(cell) {
+      cell.textContent = '';
+      cell.classList.remove('x', 'o', 'win');
+    });
+
+    message.textContent = '';
+    currentPlayer = 'X';
+    gameActive = true;
+    moves = 0;
+  }
+
+  restartButton.addEventListener('click', restartGame);
+
+
+  </script>
+</body>
+</html> 
+
