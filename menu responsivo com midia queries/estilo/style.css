@@ -1,0 +1,64 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: lightcyan;
+}
+header{
+    background-color: lightseagreen;
+    text-align: center;
+}
+header > h1{
+    padding: 20px;
+}
+#burguer{
+    background-color: rgb(26, 150, 144);
+    display: block;
+    color: rgb(138, 241, 236);
+    text-shadow: 1px 1px 2px green;
+    padding: 10px;
+}
+#burguer:hover{
+    background-color: rgb(44, 248, 238);
+    color: rgb(92, 164, 160);
+    cursor: pointer;
+    
+}
+menu{
+    
+    display: none;
+}
+ul{
+    list-style: none;
+    display: block;
+    display: inline-block;
+}
+menu > ul> li > a{
+    background-color: rgb(11, 124, 124);
+    display: block;
+    padding: 10px ;
+    margin: 0px;
+    padding: 10px 40vw;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px black;
+}
+menu > ul> li > a:hover{
+    background-color: rgb(8, 130, 89);
+}
+main{
+    background-color: lightgreen;
+    width: 80vw;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+article > p{
+    text-align: justify;
+    text-indent: 30px;
+}
